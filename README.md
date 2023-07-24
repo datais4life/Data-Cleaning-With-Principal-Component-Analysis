@@ -34,29 +34,29 @@ df = pd.read_csv("churn_raw_data.csv")
 ```
 ### Exploration of the Data
 The head() method is used to show the first five rows of the raw data, and the columns command is used to discover the attributes in the column headers of the file. This csv file contains telecommunication churn data with 52 columns of attributes used to describe the 10,000 customer records for the company. 
-![Attributes](images/attributes.png)
+![Attributes](attributes.png)
 
 The describe command shows the statistics for the data, giving the mean, count, standard deviation, min, and max for the whole data frame. 
-![Statistics](images/statistics.png)
+![Statistics](statistics.png)
 
 The dtypes command shows the data type assigned to each attribute. 
-![Data Types](images/dtypes.png)
+![Data Types](dtypes.png)
 
 ### Data Cleaning
 As stated prior, null or missing values are critical to find so that the data frame can be manipulated into a complete dataset for evaluation. Using the isnull() method in combination with the sum() method, the total cells with missing or null values is shown for each attribute.
-![Null Values](images/nulls.png)
+![Null Values](nulls.png)
 
 There are a number of missing values from the children, age, income, techie, phone, tech support, tenure, and badnwidth GB year columns. Each column will be addressed individually. Attributes that do not add to the analysis are dropped using the drop() method. For this data frame, the CaseOrder and Unnamed:0 columns are dropped. For attributes that need a better label, the rename() method is used to relabel the column. This is performed on all eight of the survey response fields to match the attributes in the data dictionary.
 
 The next thing to check is if any of the rows are duplicated (a customer is added twice). This is done using the duplicated() method. Running this shows no duplicated rows in this data frame. Now, the data will be searched through for outlying factors in the data that could throw off future calculations. Box plots are great at finding outlying values in the figures. Boxplots are created for the children, age, income, tenure, and bandwidth GB year columns, with outliers found in the children and income columns. Those attributes are removed from the data frame using the drop() method. 
-![Children Boxplot](images/boxplot_children.png)
-![Age Boxplot](images/boxplot_age.png)
-![Income Boxplot](images/boxplot_income.png)
-![Tenure Boxplot](images/boxplot_tenure.png)
-![Bandwidth Boxplot](images/boxplot_bandwidth.png)
+![Children Boxplot](boxplot_children.png)
+![Age Boxplot](boxplot_age.png)
+![Income Boxplot](boxplot_income.png)
+![Tenure Boxplot](boxplot_tenure.png)
+![Bandwidth Boxplot](boxplot_bandwidth.png)
 
 The missing values in the tenure and bandwidth columns could be due to the fact that the customer had recently signed up for the service. The tenure does not begin to count until a month has passed. A zero can be imputed in place of all of these missing values using the fillna(0) method. Addressing the remaining three columns; techie, phone and tech support. The value that most frequently occurs wil be found using the value_counts() method, and filled using the fillna() method.
-![Missing Values](images/missing.png)
+![Missing Values](missing.png)
 
 The data is now clean and ready for analysis. 
 
