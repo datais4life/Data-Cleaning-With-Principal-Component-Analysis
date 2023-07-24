@@ -1,4 +1,4 @@
-# Data-Cleaning-&-Principal-Component-Anlalysis
+# Data-Cleaning-&-Principal-Component-Analysis
 
 Data cleaning, also known as data cleansing or data scrubbing, is a critical process in data analysis that involves identifying and correcting errors, inconsistencies, and inaccuracies in a dataset. It is an essential step before performing any meaningful analysis because the quality of the analysis and the insights derived from the data heavily depend on the cleanliness of the data.
 
